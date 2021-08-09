@@ -16,8 +16,14 @@ Neste exemplo, foi usado como backend uma aplicação que se propôes ser uma RE
 <br/>
 
 ## Subindo a stack com Docker Compose
+O docker-compose deverá construir localmente a seguinte pilha de serviços.
 
-Clone o repositório:
+ * Portainer: console web de gerenciamento de containers que otimiza o acesso as configurações e logs dos containers. Para utilizar acesse https://localhost:9000 (será solicitado o cadastro de administrador)
+ * OpenLDAP: uma base OpenLDAP de testes que será utilizada pelo backend da nossa aplicação
+ * Ldap-backend: são os artefatos de código do backend de nossa aplicação, que nesse caso implementam uma API Rest com diversas rotas de gerenciamento da base LDAP. 
+
+
+### Clonando o repositório contendo o docker-compose:
 
 ```sh
 https://github.com/ifrs-sertao/ldap-handler-services
@@ -25,7 +31,6 @@ https://github.com/ifrs-sertao/ldap-handler-services
 
 Rename env-example file to .env, and change data.
 
-Change the secret in /src/app/config/auth.json.
 
 Build docker image:
 ```sh
