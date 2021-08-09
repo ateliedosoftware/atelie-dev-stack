@@ -17,7 +17,7 @@ services:
     container_name: openldap
     image: docker.io/bitnami/openldap:2.5
     ports:
-      - '389:1389'
+      - '389:389'
       # - '636:1636'  
     volumes:
       - './docker/data/openldap:/bitnami/openldap'

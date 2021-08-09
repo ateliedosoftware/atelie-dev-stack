@@ -31,7 +31,7 @@ Renomeie env-example para **.env**, e altere as variáveis  com valores do seu a
 
 - [ ] Validar o Bind LDAP na base OpenLDAP
 - [ ] Criar testes unitários pra validar a conexão com a base LDAP
-- [ ] Validar se o código está agnóstico, ou seja, funciona independente da plataforma (OpenLDAP, Samba4, AD)
+- [ ] Validar se o código está agnóstico, ou seja, funciona independente da plataforma (OpenLDAP, Samba4, AD)- [ ] Ver como personalizar a porta default do backend para consulta LDAP ( hoje só tem opção pela 389) 
 
 ## License
 
