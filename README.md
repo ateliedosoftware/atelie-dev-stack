@@ -1,14 +1,23 @@
-<h1 align="center">LDAP HANDLER SERVICES</h1>
+<h1 align="center">STACK DESENVOLVIMENTO BASEADA EM DOCKER PROJETO ATELIÊ</h1>
+Proposta de ambiente de desenvolvimento baseado em Docker e Docker-Compose para facilitar o criação e provisionamento (deploy) de aplicações no Projeto Ateliê do Software.
 
-## REST API microservice for Active Directory/LDAP implementations.
-Uma proposta de REST API agnóstica para implementações LDAP como Samba 4, Active Directoty e OpenLDAP.
+## Requisitos para máquina de DEV:
+
+    - Docker e Docker Compose
+    - Git - Sistema de Versionamento de Códigos
+    - NPM ou YANR - Gestão de pacotes NodeJS
+
+## Artefatos de Código
+Exemplo de aplicação para construção das imagens Docker e arquivos docker-compose.
+### REST API microservice for Active Directory/LDAP implementations.
+Neste exemplo, foi usado como backend uma aplicação que se propôes ser uma REST API agnóstica para as diversas implementações LDAP tais como Samba 4, Active Directoty e OpenLDAP.
 
 <br/>
 <br/>
 
-## Running locally
+## Subindo a stack com Docker Compose
 
-Clone the repository:
+Clone o repositório:
 
 ```sh
 https://github.com/ifrs-sertao/ldap-handler-services

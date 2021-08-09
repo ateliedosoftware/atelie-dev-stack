@@ -1,0 +1,39 @@
+
+version: '3.3'
+
+services:
+  portainer:
+    container_name: portainer
+    image: portainer/portainer-ce
+    command: -H unix:///var/run/docker.sock
+    restart: always
+    ports:
+      - 9000:9000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./docker/data/portainer:/data
+
+  openldap:
+    container_name: openldap
+    image: docker.io/bitnami/openldap:2.5
+    ports:
+      - '389:1389'
+      - '636:1636'  
+    volumes:
+      - './docker/data/openldap:/bitnami/openldap'
+    environment: 
+      - LDAP_ROOT=dc=devdom,dc=com
+      - LDAP_ADMIN_USERNAME=admin
+      - LDAP_ADMIN_PASSWORD=adminpassword
+      - LDAP_USERS=user01,user02
+      - LDAP_PASSWORDS=password1,password2
+
+  ldap-backend:
+    container_name: ldap-backend
+    build: .
+    command: npm start
+    ports: 
+      - "1111:1111"
+    volumes:
+      - ./src:/usr/app
+  
