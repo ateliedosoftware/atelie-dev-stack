@@ -18,22 +18,31 @@ services:
     image: docker.io/bitnami/openldap:2.5
     ports:
       - '389:1389'
-      - '636:1636'  
+      # - '636:1636'  
     volumes:
       - './docker/data/openldap:/bitnami/openldap'
     environment: 
-      - LDAP_ROOT=dc=devdom,dc=com
+      - LDAP_ROOT=DC=example,DC=org
       - LDAP_ADMIN_USERNAME=admin
       - LDAP_ADMIN_PASSWORD=adminpassword
       - LDAP_USERS=user01,user02
       - LDAP_PASSWORDS=password1,password2
+    networks: 
+      - lab-net
 
   ldap-backend:
+    depends_on: 
+      - openldap
     container_name: ldap-backend
     build: .
     command: npm start
     ports: 
       - "1111:1111"
     volumes:
-      - ./src:/usr/app
-  
+      - ./:/usr/app
+    networks: 
+      - lab-net
+
+networks: 
+  lab-net:
+      driver: bridge
