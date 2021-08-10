@@ -1,3 +1,4 @@
 node_modules
 .env
-docker
+docker/data/portainer/*
+docker/data/openldap/*
