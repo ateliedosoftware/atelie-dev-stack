@@ -34,7 +34,9 @@ services:
     depends_on: 
       - openldap
     container_name: ldap-backend
-    build: .
+    build:
+      context: .
+      dockerfile: ./ldap-backend.Dockerfile
     command: npm start
     ports: 
       - "1111:1111"
