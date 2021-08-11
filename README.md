@@ -28,6 +28,7 @@ https://github.com/ifrs-sertao/atelie-dev-stack
 ### Antes de rodar o compose:
 
 1 - Renomeie env-example para **.env**, e altere as variáveis  com valores do seu ambiente de DEV.
+
 2 - Crie a rede lab-net:
 
 ```shell
