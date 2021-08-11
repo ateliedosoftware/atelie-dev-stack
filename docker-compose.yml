@@ -17,38 +17,37 @@ services:
     container_name: samba4
     build:
       context: .
-      dockerfile: ./docker/atelie-dev-stack/docker/samba4-ad-dc/Dockerfile
-      command: npm start
-      ports: 
-        - "1111:1111"
-      volumes:
-        - ${PWD}/samba:/var/lib/samba
-        - ${PWD}/samba:/etc/samba
-      environment: 
-          - SAMBA_REALM="example.org"
-          - SAMBA_DOMAIN="example"
-          - ROOT_PASSWORD="adminpassword"
-          - SAMBA_ADMIN_PASSWORD="adminpassword"
-          - SAMBA_DNS_FORWARDER="8.8.8.8" 
-      ports:
-          - 53:53
-          - 53:53/udp
-          - 88:88
-          - 88:88/udp
-          - 135:135
-          - 139:139
-          - 389:389
-          - 389:389/udp
-          
-      networks: 
-        - lab-net
+      dockerfile: ./docker/samba4-ad-dc/Dockerfile
+    ports: 
+      - "1111:1111"
+    volumes:
+      - ${PWD}/samba:/var/lib/samba
+      - ${PWD}/samba:/etc/samba
+    environment: 
+        - SAMBA_REALM="example.org"
+        - SAMBA_DOMAIN="example"
+        - ROOT_PASSWORD="adminpassword"
+        - SAMBA_ADMIN_PASSWORD="adminpassword"
+        - SAMBA_DNS_FORWARDER="8.8.8.8" 
+    ports:
+        - 53:53
+        - 53:53/udp
+        - 88:88
+        - 88:88/udp
+        - 135:135
+        - 139:139
+        - 389:389
+        - 389:389/udp
+        
+    networks: 
+      - lab-net
 
   openldap:
     container_name: openldap
     image: docker.io/bitnami/openldap:2.5
     ports:
-      - '389:389'
-      # - '636:1636'  
+      - '1389:1389'
+      # - '1636:1636'  
     volumes:
       - './docker/data/openldap:/bitnami/openldap'
     environment: 
