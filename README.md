@@ -25,7 +25,35 @@ O docker-compose deverá construir localmente a seguinte pilha de serviços.
 https://github.com/ifrs-sertao/atelie-dev-stack
 
 ```
-Renomeie env-example para **.env**, e altere as variáveis  com valores do seu ambiente de DEV.
+### Antes de rodar o compose:
+
+1 - Renomeie env-example para **.env**, e altere as variáveis  com valores do seu ambiente de DEV.
+2 - Crie a rede lab-net:
+
+```shell
+docker network create lab-net
+```
+### Agora sim! Rode o comando para criar a stack na máquina local
+
+O comando abaixo build(constrói) as imagens e sobe a stack de desenvolvimento.
+```shell
+docker-compose up -d --build
+
+```
+
+Caso queira rodar a stack sem buildar novamente:
+```shell
+docker-compose up -d
+
+```
+
+Caso queira rodar e/ou buildar um serviço específico da stack, inclua o nome do serviço no final:
+```shell
+docker-compose up -d --build openldap
+
+```
+
+
 
 # TO DO
 
