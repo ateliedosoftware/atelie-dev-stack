@@ -11,60 +11,61 @@ services:
       - 9000:9000
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./docker/data/portainer:/data
-  # em construção
+      - ./data/portainer:/data
+  # # # em construção
   samba4:
-    container_name: samba4
-    build:
-      context: .
-      dockerfile: ./docker/samba4-ad-dc/Dockerfile
-    ports: 
-      - "1111:1111"
+    container_name: dc
+    privileged: true
+    image: tiagojferreira/samba4:latest
+    command: /usr/local/bin/dcpromo.py
     volumes:
-      - ${PWD}/samba:/var/lib/samba
-      - ${PWD}/samba:/etc/samba
+      - ./data/samba:/var/lib/samba
+      # - ${PWD}/data/samba:/etc/samba
     environment: 
-        - SAMBA_REALM="example.org"
-        - SAMBA_DOMAIN="example"
-        - ROOT_PASSWORD="adminpassword"
-        - SAMBA_ADMIN_PASSWORD="adminpassword"
-        - SAMBA_DNS_FORWARDER="8.8.8.8" 
+      - SAMBA_ADMINPASS=Abc123!
+      - SAMBA_KRBTGTPASS=Abc123!
+      - SAMBA_REALM=EXAMPLE.ORG
+      - SAMBA_HOST_NAME=dc
+      - SAMBA_DOMAIN=example
     ports:
-        - 53:53
-        - 53:53/udp
-        - 88:88
-        - 88:88/udp
-        - 135:135
-        - 139:139
-        - 389:389
-        - 389:389/udp
-        
+      - 88:88
+      - 135:135
+      - 139:139
+      - 389:389
+      - 636:636
+      - 464:464
+      - 445:445
+      - 3269:3269
+      - 3268:3268
+      - 1024:1024
+      - 553:53
+      - 222:22
     networks: 
       - lab-net
 
-  openldap:
-    container_name: openldap
-    image: docker.io/bitnami/openldap:2.5
-    ports:
-      - '1389:1389'
-      # - '1636:1636'  
-    volumes:
-      - './docker/data/openldap:/bitnami/openldap'
-    environment: 
-      - LDAP_ROOT=DC=example,DC=org
-      - LDAP_ADMIN_USERNAME=admin
-      - LDAP_ADMIN_PASSWORD=adminpassword
-      - LDAP_USERS=user01,user02
-      - LDAP_PASSWORDS=password1,password2
-    networks: 
-      - lab-net
+  # openldap:
+  #   container_name: openldap
+  #   image: docker.io/bitnami/openldap:2.5
+  #   ports:
+  #     - '1389:1389'
+  #     # - '1636:1636'  
+  #   volumes:
+  #     - './docker/data/openldap:/bitnami/openldap'
+  #   environment: 
+  #     - LDAP_ROOT=DC=example,DC=org
+  #     - LDAP_ADMIN_USERNAME=admin
+  #     - LDAP_ADMIN_PASSWORD=adminpassword
+  #     - LDAP_USERS=user01,user02
+  #     - LDAP_PASSWORDS=password1,password2
+  #   networks: 
+  #     - lab-net
 
   ldap-backend:
-    depends_on: 
-      - openldap
+    # depends_on: 
+    #   - samba4
     container_name: ldap-backend
     build:
-      context: .
+      context: ./
       dockerfile: ./ldap-backend.Dockerfile
     command: npm start
     ports: 
