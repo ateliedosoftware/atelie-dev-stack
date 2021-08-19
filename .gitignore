@@ -1,6 +1,5 @@
 node_modules
 .env
-./data/portainer/
-./data/openldap/data/
-./data/openldap/slapd.d/
-./data/samba/
+data/samba
+data/openldap/data
+data/openldap/slapd.d
