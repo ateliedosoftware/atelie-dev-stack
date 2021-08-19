@@ -3,4 +3,7 @@ node_modules
 data/samba
 data/openldap/data
 data/openldap/slapd.d
-data/portainer/*
+data/portainer/bin
+data/portainer/compose
+data/portainer/tls
+data/portainer/config.json
