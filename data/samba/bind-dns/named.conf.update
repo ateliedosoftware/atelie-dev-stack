@@ -1,6 +1,0 @@
-/* this file is auto-generated - do not edit */
-update-policy {
-	grant EXAMPLE.ORG ms-self * A AAAA;
-	grant Administrator@EXAMPLE.ORG wildcard * A AAAA SRV CNAME;
-	grant DC$@example.org wildcard * A AAAA SRV CNAME;
-};
