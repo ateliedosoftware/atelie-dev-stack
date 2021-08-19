@@ -1,5 +1,5 @@
 node_modules
 .env
-docker/data/portainer/
-docker/data/openldap/
+data/portainer/
+data/openldap/
 data/samba/
