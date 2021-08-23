@@ -22,7 +22,7 @@ O docker-compose deverá construir localmente a seguinte pilha de serviços.
 ### Clonando o repositório contendo o docker-compose:
 
 ```shell
-git clone https://github.com/ifrs-sertao/atelie-dev-stack
+https://github.com/ateliedosoftware/atelie-dev-stack.git
 
 ```
 ### Antes de rodar o compose:
