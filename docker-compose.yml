@@ -45,19 +45,6 @@ services:
     networks: 
       - lab-net
 
-  ambiente-vue:
-    container_name: ambiente-vue
-    build: 
-      context: ./vue
-      dockerfile: vue.Dockerfile
-    volumes:
-      - './vue:/app'
-      - '/app/node_modules'
-    ports:
-      - '8080:8080'
-    networks: 
-      - lab-net    
-
 networks: 
   lab-net:
       driver: bridge
