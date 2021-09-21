@@ -1,3 +1,4 @@
 node_modules
-docker/data/portainer/*
-docker/data/openldap/*
+docker/data/portainer/
+docker/data/openldap/
+data/samba/

@@ -1,4 +1,9 @@
 node_modules
 .env
-docker/data/portainer/*
-docker/data/openldap/*
+data/samba
+data/openldap/data
+data/openldap/slapd.d
+data/portainer/bin
+data/portainer/compose
+data/portainer/tls
+data/portainer/config.json
