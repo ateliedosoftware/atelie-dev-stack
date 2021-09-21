@@ -28,6 +28,33 @@ De acordo com docker-compose.yml defino na raíz do projeto:
 docker-compose up -d --build ambiente-vue
 ```
 
+## Para contribuir com códigos
+Como primeira extratégia, podemo seguir os seguintes passos para colaborar com o projeto de modo simples e seguro.
+
+Crie uma nova "feature branch" com a melhoria incorporada:
+
+```shell
+git checkout -b feature/login-vue
+```
+Confere se tá na branch nova(olha o *):
+```shel
+git branch
+```
+Adiciona as tuas alterações:
+```shell
+git add .
+```
+Faz o commit explicando de forma objetiva e clara o que o código faz:
+```shell
+git commit -m "Inclui telas de boas vindas e login"
+```
+Por último faz o push:
+```shell
+git push origin feature/login-vue
+```
+Com isso, o responsável pode conferir as mudanças e efetuar o merge.
+
+<hr>
 ## Mais detalhes sobre a stack
 Exemplo de aplicação para construção das imagens Docker e arquivos docker-compose.
 
