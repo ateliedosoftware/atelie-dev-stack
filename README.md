@@ -16,13 +16,14 @@ Este diretório deverá ser útil para centralizar os dados de banco de dados, s
 ### docs
 Este é um diretório que merece atenção. A ideia é documentarmos todo o nosso processo.
 <hr>
+
 ## Requisitos para máquina de DEV:
 
     - Docker e Docker Compose
     - Git - Sistema de Versionamento de Códigos
     - NPM ou YANR - Gestão de pacotes NodeJS
 
-## # Construir e rodar tela de login com docker-compose
+## Construir e rodar tela de login com docker-compose
 De acordo com docker-compose.yml defino na raíz do projeto:
 ```
 docker-compose up -d --build ambiente-vue
@@ -55,6 +56,7 @@ git push origin feature/login-vue
 Com isso, o responsável pode conferir as mudanças e efetuar o merge.
 
 <hr>
+
 ## Mais detalhes sobre a stack
 Exemplo de aplicação para construção das imagens Docker e arquivos docker-compose.
 
