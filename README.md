@@ -28,6 +28,9 @@ De acordo com docker-compose.yml defino na raíz do projeto:
 ```
 docker-compose up -d --build ambiente-vue
 ```
+![image](https://user-images.githubusercontent.com/6537456/134259215-7b15b59b-1914-4bfb-a965-228d22fdd11f.png)
+
+
 
 ## Para contribuir com códigos
 Como primeira extratégia, podemo seguir os seguintes passos para colaborar com o projeto de modo simples e seguro.
