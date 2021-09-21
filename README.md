@@ -1,7 +1,7 @@
 <h1 align="center">STACK DESENVOLVIMENTO BASEADA EM DOCKER PROJETO ATELIÊ</h1>
 Proposta de ambiente de desenvolvimento baseado em Docker e Docker-Compose para facilitar o criação e provisionamento (deploy) de aplicações no Projeto Ateliê do Software.
 
-Um hipótese é tornar esse repositório uma espécie de boirlerplate ou modelo para as próximas fases do projeto, ou seja, para além da organização dos códigos no projeto seguindo boas práticas, podemos centralizar aqui aspectos relacionados a documentação e aprendizagens.
+Uma hipótese é tornar esse repositório uma espécie de _boirlerplate_ ou modelo para as próximas fases do projeto, ou seja, para além da organização dos códigos no projeto seguindo boas práticas, podemos centralizar aqui aspectos relacionados a documentação e nossas aprendizagens.
 
 ## Estrutura básicas das pastas
 
@@ -21,6 +21,12 @@ Este é um diretório que merece atenção. A ideia é documentarmos todo o noss
     - Docker e Docker Compose
     - Git - Sistema de Versionamento de Códigos
     - NPM ou YANR - Gestão de pacotes NodeJS
+
+## # Construir e rodar tela de login com docker-compose
+De acordo com docker-compose.yml defino na raíz do projeto:
+```
+docker-compose up -d --build ambiente-vue
+```
 
 ## Artefatos de Código
 Exemplo de aplicação para construção das imagens Docker e arquivos docker-compose.
