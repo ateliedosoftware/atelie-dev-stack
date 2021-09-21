@@ -28,7 +28,7 @@ De acordo com docker-compose.yml defino na raíz do projeto:
 docker-compose up -d --build ambiente-vue
 ```
 
-## Artefatos de Código
+## Mais detalhes sobre a stack
 Exemplo de aplicação para construção das imagens Docker e arquivos docker-compose.
 
 ### REST API microservice for Active Directory/LDAP implementations.
