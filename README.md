@@ -1,6 +1,21 @@
 <h1 align="center">STACK DESENVOLVIMENTO BASEADA EM DOCKER PROJETO ATELIÊ</h1>
 Proposta de ambiente de desenvolvimento baseado em Docker e Docker-Compose para facilitar o criação e provisionamento (deploy) de aplicações no Projeto Ateliê do Software.
 
+Um hipótese é tornar esse repositório uma espécie de boirlerplate ou modelo para as próximas fases do projeto, ou seja, para além da organização dos códigos no projeto seguindo boas práticas, podemos centralizar aqui aspectos relacionados a documentação e aprendizagens.
+
+## Estrutura básicas das pastas
+
+### frontend 
+Esta é a pasta principal para o período 2021 do projeto, no qual focaremos no frontend da aplicação Web usando tecnologias como o framewrok progressivo Vue, Javascript, CSS e HTML.
+> Note que dentro da pasta, além dos códigos da aplicação temos o Dockerfile que constrói o ambiente em docker.
+### backend
+Num primeiro momento, o backend aproveita os códigos em NodeJS de interação com a base de dados LDAP, desenvolvido em outro projeto do campus.
+> A ideia é que esse backend e suas rotas seja consultado pelo frontend em desenvolvimento no projeto Ateliê
+### bd
+Este diretório deverá ser útil para centralizar os dados de banco de dados, se for o caso. Por hora não é prioritário.
+### docs
+Este é um diretório que merece atenção. A ideia é documentarmos todo o nosso processo.
+<hr>
 ## Requisitos para máquina de DEV:
 
     - Docker e Docker Compose
@@ -9,6 +24,7 @@ Proposta de ambiente de desenvolvimento baseado em Docker e Docker-Compose para 
 
 ## Artefatos de Código
 Exemplo de aplicação para construção das imagens Docker e arquivos docker-compose.
+
 ### REST API microservice for Active Directory/LDAP implementations.
 Neste exemplo, foi usado como backend uma aplicação que se propôes ser uma REST API agnóstica para as diversas implementações LDAP tais como Samba 4, Active Directoty e OpenLDAP.
 
@@ -21,40 +37,11 @@ O docker-compose deverá construir localmente a seguinte pilha de serviços.
 
 ### Clonando o repositório contendo o docker-compose:
 
-```shell
-https://github.com/ateliedosoftware/atelie-dev-stack.git
+```sh
+https://github.com/ifrs-sertao/atelie-dev-stack
 
 ```
-### Antes de rodar o compose:
-
-1 - Renomeie env-example para **.env**, e altere as variáveis  com valores do seu ambiente de DEV.
-
-2 - Crie a rede lab-net:
-
-```shell
-docker network create lab-net
-```
-### Agora sim! Rode o comando para criar a stack na máquina local
-
-O comando abaixo build(constrói) as imagens e sobe a stack de desenvolvimento.
-```shell
-docker-compose up -d --build
-
-```
-
-Caso queira rodar a stack sem buildar novamente:
-```shell
-docker-compose up -d
-
-```
-
-Caso queira rodar e/ou buildar um serviço específico da stack, inclua o nome do serviço no final:
-```shell
-docker-compose up -d --build openldap
-
-```
-
-
+Renomeie env-example para **.env**, e altere as variáveis  com valores do seu ambiente de DEV.
 
 # TO DO
 
@@ -66,3 +53,4 @@ docker-compose up -d --build openldap
 ## License
 
 MIT
+set-inform 172.19.0.3:8080/inform
