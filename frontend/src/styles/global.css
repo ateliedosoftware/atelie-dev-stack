@@ -43,6 +43,7 @@ button {
     opacity: 0.9;
     border: none;
     cursor: pointer;
+    margin-top: 15px;
 }
 
 button:hover {
@@ -51,7 +52,13 @@ button:hover {
 
 input {
     padding: 4px 13px;
-    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    margin-top: 10px;
+}
+
+input:focus {
+    outline: none !important;
+    border-color: #719ECE;
+    box-shadow: 0 0 2px #719ECE;
 }
