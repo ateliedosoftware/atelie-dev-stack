@@ -10,6 +10,7 @@
       <form class="form-login">
         <h4 class="title-login">Login</h4>
         <div class="usuario">
+        
           <input
             id="inputUser"
             type="text"
@@ -20,10 +21,7 @@
         </div>
 
         <input type="password" placeholder="Senha" v-model="password" />
-        <!-- :class="{'is-invalid' : validatonStatus($v.password)}"-->
-        <!--<div v-if="!$v.password.rerquired" class="invalid-feedback">
-          Digite a senha!
-        </div> -->
+      
         <br />
         <div class="btn-login">
           <button>Entrar</button>
@@ -47,21 +45,29 @@ export default {
     user(val) {
       this.tipoUsuario(val);
     },
+    tipo(val){
+      this.cssTipoUsuario(val);
+    }
   },
 
   methods: {
-    tipoUsuario(x) {
-
+    cssTipoUsuario(tipo){ // muda as cores do input e da mensagem caso a matrícula esteja incorreta
       // -- CSS erro --
       var campoMensagem = document.getElementById("mensagem");
       var inputUser = document.getElementById("inputUser");
       
-      if (this.tipo != "Matrícula incorreta!") {
+      if (tipo != "Matrícula incorreta!") {
         campoMensagem.className = "feedback";
         //inputUser.className = "certo-input";
         inputUser.classList.remove("erro-input");
         campoMensagem.classList.remove("incorreto");
-      } 
+      } else{
+        campoMensagem.className = "feedback incorreto";
+        inputUser.className = "erro-input";
+      }
+    },
+    
+    tipoUsuario(x) {
 
       //-- Mensagens --
       // ---- Mensagem matricula Campus ----
@@ -81,12 +87,10 @@ export default {
         if (TestaCPF(x.split(".").join("").split("-").join(""))) {
           return (this.tipo = "Matrícula CPF"); // com pontuação
         }
-      } else if (x.length > 4) {
-        campoMensagem.className = "feedback incorreto";
-         inputUser.className = "erro-input";
-        return (this.tipo = "Matrícula incorreta!");
-      } else {
+      } else if (x.length == 0) {
         return (this.tipo = "");
+      } else {
+        return (this.tipo = "Matrícula incorreta!");
       }
 
       // -- Testes --
@@ -126,6 +130,8 @@ export default {
         if (Resto != parseInt(strCPF.substring(10, 11))) return false;
         return true;
       }
+
+      
 
       /* ---- Testa email ----
       function testaEmail(x){
@@ -204,12 +210,5 @@ input {
   box-shadow: 0 0 2px #ee5b36;
 }
 
-.teste {
-  color: red;
-}
 
-.teste2 {
-  border-color: #2ff150;
-  box-shadow: 0 0 2px #2ff150;
-}
 </style>
