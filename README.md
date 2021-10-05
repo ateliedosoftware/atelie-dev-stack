@@ -88,6 +88,12 @@ Renomeie env-example para **.env**, e altere as variáveis  com valores do seu a
 - [ ] Validar se o código está agnóstico, ou seja, funciona independente da plataforma (OpenLDAP, Samba4, AD)
 - [ ] Ver como personalizar a porta default do backend para consulta LDAP ( hoje só tem opção pela 389) 
 
+# O PROJETO ATELIÊ - eventos e publicações
+
+- [V SEMEPT IFRS - Resumo Pedro A. Machado](https://github.com/ateliedosoftware/atelie-dev-stack/blob/main/docs/publicacoes/resumo_semept2020.md) 
+- [V Sertão Aplicado - Resumo Fabricio Covalesci/2020](https://github.com/ateliedosoftware/atelie-dev-stack/blob/main/docs/publicacoes/sertaoaplicado2020.md)
+
+
 ## License
 
 MIT
