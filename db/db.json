@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": 2,
+      "username": "0024321",
+      "fullname": "Bruna silva",
+      "password": "senhadabruna"
+    },
+    {
+      "username": "00242015",
+      "fullname": "Hian lion",
+      "password": "hian",
+      "id": 5
+    },
+    {
+      "username": "Analu",
+      "fullname": "Analu joaquina",
+      "password": "analu123",
+      "id": 6
+    },
+    {
+      "username": "24201@aluno.sertao.ifrs.edu.br",
+      "fullname": "julia mello",
+      "password": "123",
+      "id": 7
+    },
+    {
+      "username": "1234567890",
+      "fullname": "lucas danilo",
+      "password": "123456",
+      "id": 8
+    },
+    {
+      "username": "juliahpm",
+      "fullname": "julia mello",
+      "password": "789456",
+      "id": 9
+    }
+  ]
+}
