@@ -1,4 +1,3 @@
-
 FROM node:12.2.0-alpine
 ENV LANG C.UTF-8
 WORKDIR /app
@@ -15,7 +14,8 @@ RUN npm install @vue/cli@3.7.0 -g
 
 RUN npm install vue-router
 
-RUN npm install vuelidate
+# Install HTTP client
+RUN  npm install vuex axios
 
 # iniciar app
 CMD ["npm", "run", "serve"]
