@@ -67,11 +67,12 @@ a:hover {
   bottom: 0;
   left: 0;
   right: 0;
+  width: 15%;
 }
 
 .navbar {
   position: relative;
-  width: 15%;
+
   height: 100%;
   background-color: #f9fbfc;
   color: rgb(65, 65, 65);
@@ -111,6 +112,7 @@ a:hover {
 @media screen and (max-width: 1000px) {
   .containerNavbar {
     position: sticky;
+    width: 100%;
   }
 
   .navbar {
