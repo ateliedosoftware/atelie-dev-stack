@@ -4,8 +4,8 @@ https://github.com/ArtOfEngineer/Vue-Js-ASP-NET-Core-WebAPI/blob/main/ui/departm
 https://www.youtube.com/watch?v=Jg4GOPaE4do&ab_channel=ArtofEngineer
  -->
   <div class="container">
-    <div class="row justify-content-between ">
-      <div class="col-8">
+    <div class="row justify-content-between">
+      <div class="col-sm-12 col-md-8">
         <div class="title-tab">
           <h3>Usuários cadastrados</h3>
         </div>
@@ -21,7 +21,7 @@ https://www.youtube.com/watch?v=Jg4GOPaE4do&ab_channel=ArtofEngineer
       </div>
 
       <!-- pesquisa -->
-      <div class="col-4 ">
+      <div class="col-sm-12 col-md-4">
         <input
           class="form-control input-pesquisa"
           v-model="usernameFilter"
@@ -36,72 +36,26 @@ https://www.youtube.com/watch?v=Jg4GOPaE4do&ab_channel=ArtofEngineer
           <tr>
             <th>
               <div class="d-flex flex-row align-items-end">
-                <div class="col-2 ">ID</div>
-                <!--<div class="col-10">
-                  <a @click="sortResult('userId', true)">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-arrow-down-square-fill"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0z"
-                      />
-                    </svg>
+                <div class="col-2">ID</div>
+                <!--mudar ordem alfabética nome completo-->
+                <div class="col">
+                  <a @click="sortId = !sortId">
+                    <img
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAo0lEQVRIie2VywqDMBBFD/5EtVXQ/18X+hUtFRSMgi76H+3CzKbER14LaS9cyCbnBiYzA38FVAY8gLs+B9UJaIC3dgdcQsHTL7hYhQjJgd4AF49A6QovNuDiCahc4MMOuHNIbQEXP02gZCHgZfMajzsH1g37GlxNoKUanB0eZdV00b+phOxpNK9uToF2Ba6Yx4mXog47UdRxLcqYl02UhfPD+gA2c2+d96/PBQAAAABJRU5ErkJggg=="
+                    />
                   </a>
-                  <a @click="sortResult('userId', false)">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-arrow-up-square-fill"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M2 16a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2zm6.5-4.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 1 0z"
-                      />
-                    </svg>
-                  </a>
-                </div>-->
+                </div>
               </div>
             </th>
             <th>
               <!--mudar ordem alfabética username-->
               <div class="d-flex flex-row align-items-end">
-                <div class="col-4 ">Usuário</div>
+                <div class="col-4 p-0">Usuário</div>
                 <div class="col-8">
-                  <a @click="sortResult('username', true)">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-arrow-down-square-fill"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0z"
-                      />
-                    </svg>
-                  </a>
-
-                  <a @click="sortResult('username', false)">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-arrow-up-square-fill"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M2 16a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2zm6.5-4.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 1 0z"
-                      />
-                    </svg>
+                  <a @click="sortUsername = !sortUsername">
+                    <img
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAo0lEQVRIie2VywqDMBBFD/5EtVXQ/18X+hUtFRSMgi76H+3CzKbER14LaS9cyCbnBiYzA38FVAY8gLs+B9UJaIC3dgdcQsHTL7hYhQjJgd4AF49A6QovNuDiCahc4MMOuHNIbQEXP02gZCHgZfMajzsH1g37GlxNoKUanB0eZdV00b+phOxpNK9uToF2Ba6Yx4mXog47UdRxLcqYl02UhfPD+gA2c2+d96/PBQAAAABJRU5ErkJggg=="
+                    />
                   </a>
                 </div>
               </div>
@@ -109,36 +63,12 @@ https://www.youtube.com/watch?v=Jg4GOPaE4do&ab_channel=ArtofEngineer
             <th>
               <!--mudar ordem alfabética nome completo-->
               <div class="d-flex flex-row align-items-end">
-                <div class="col-4 ">Nome</div>
-                <div class="col-8">
-                  <a @click="sortResult('fullname', true)">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-arrow-down-square-fill"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0z"
-                      />
-                    </svg>
-                  </a>
-
-                  <a @click="sortResult('fullname', false)">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-arrow-up-square-fill"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M2 16a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2zm6.5-4.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 1 0z"
-                      />
-                    </svg>
+                <div class="col-4 p-0">Nome</div>
+                <div class="col">
+                  <a @click="sortFullname = !sortFullname">
+                    <img
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAo0lEQVRIie2VywqDMBBFD/5EtVXQ/18X+hUtFRSMgi76H+3CzKbER14LaS9cyCbnBiYzA38FVAY8gLs+B9UJaIC3dgdcQsHTL7hYhQjJgd4AF49A6QovNuDiCahc4MMOuHNIbQEXP02gZCHgZfMajzsH1g37GlxNoKUanB0eZdV00b+phOxpNK9uToF2Ba6Yx4mXog47UdRxLcqYl02UhfPD+gA2c2+d96/PBQAAAABJRU5ErkJggg=="
+                    />
                   </a>
                 </div>
               </div>
@@ -148,16 +78,16 @@ https://www.youtube.com/watch?v=Jg4GOPaE4do&ab_channel=ArtofEngineer
         </thead>
         <tbody>
           <tr v-for="user in resultQuery" :key="user.id">
-            <td style="text-align: center;">{{ user.id }}</td>
+            <td style="text-align: center">{{ user.id }}</td>
             <td>{{ user.username }}</td>
             <td>{{ user.fullname }}</td>
-            <td style="text-align: center; vertical-align: middle">
-              <button
-                type="button"
-                class="btn btn-light mr-1 mt-0"
+            <td style="vertical-align: middle">
+              <a
+                class=" mr-1 mt-0"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
                 @click="editClick(user)"
+                title="Editar"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -175,9 +105,9 @@ https://www.youtube.com/watch?v=Jg4GOPaE4do&ab_channel=ArtofEngineer
                     d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"
                   />
                 </svg>
-              </button>
+              </a>
 
-              <button type="button" @click="deleteClick(user.id)" class="btn btn-light mr-1 mt-0">
+              <a @click="deleteClick(user.id)" class=" mr-1 mt-0" title="Excluir">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -190,7 +120,7 @@ https://www.youtube.com/watch?v=Jg4GOPaE4do&ab_channel=ArtofEngineer
                     d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"
                   />
                 </svg>
-              </button>
+              </a>
             </td>
           </tr>
         </tbody>
@@ -251,7 +181,21 @@ export default {
       usernameFilter: null,
       userIdFilter: '',
       usersWithoutFilter: [],
+      sortUsername: false,
+      sortFullname: false,
+      sortId: false,
     }
+  },
+  watch: {
+    sortUsername(val) {
+      this.sortResult('username', val)
+    },
+    sortFullname(val) {
+      this.sortResult('fullname', val)
+    },
+    sortId(val) {
+      this.sortResultId('userId', val)
+    },
   },
   computed: {
     //pesquisa
@@ -287,6 +231,16 @@ export default {
         this.usersWithoutFilter = response.data
       })
     },
+    deleteClick(id) {
+      if (!confirm('Excluir o usuário ' + id + '?')) {
+        return
+      }
+      axios.delete('http://localhost:3000/users/' + id).then(response => {
+        this.refreshData()
+        console.log(response.data)
+      })
+    },
+
     /*addClick() {
       this.modalTitle = 'Cadastrar usuário'
       this.userId = 0
@@ -310,22 +264,25 @@ export default {
           alert(response.data)
         })
     },*/
-    deleteClick(id) {
-      if (!confirm('Excluir o usuário ' + id + '?')) {
-        return
-      }
-      axios.delete('http://localhost:3000/users/' + id).then(response => {
-        this.refreshData()
-        console.log(response.data)
-      })
-    },
 
     sortResult(prop, asc) {
       this.users = this.usersWithoutFilter.sort(function(a, b) {
         if (asc) {
+          //true or false
           return a[prop] > b[prop] ? 1 : a[prop] < b[prop] ? -1 : 0
         } else {
           return b[prop] > a[prop] ? 1 : b[prop] < a[prop] ? -1 : 0
+        }
+      })
+    },
+
+    sortResultId(prop, asc) {
+      this.users = this.usersWithoutFilter.sort(function(a, b) {
+        if (asc) {
+          //true or false
+          return a[prop] - b[prop]
+        } else {
+          return b[prop] - a[prop]
         }
       })
     },
@@ -337,12 +294,19 @@ export default {
 </script>
 
 <style scoped>
+#tableUsers {
+  margin-top: 10px;
+}
+
 .btn {
   margin: 15px 0px;
 }
 
 .input-pesquisa {
   margin: 15px 0;
+  background-image: url('https://img.icons8.com/material-rounded/24/000000/search.png');
+  background-position: 95% 7px;
+  background-repeat: no-repeat;
 }
 
 .title-tab {
@@ -351,5 +315,11 @@ export default {
 
 .table-scroll {
   overflow-x: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .title-tab {
+    text-align: center;
+  }
 }
 </style>
