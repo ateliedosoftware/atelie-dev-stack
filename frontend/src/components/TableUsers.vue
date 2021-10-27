@@ -40,6 +40,7 @@ https://www.youtube.com/watch?v=Jg4GOPaE4do&ab_channel=ArtofEngineer
                 <!--mudar ordem alfabética nome completo-->
                 <div class="col">
                   <a @click="sortId = !sortId">
+                    <!--mudar de true para false de acordo com o click-->
                     <img
                       src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAo0lEQVRIie2VywqDMBBFD/5EtVXQ/18X+hUtFRSMgi76H+3CzKbER14LaS9cyCbnBiYzA38FVAY8gLs+B9UJaIC3dgdcQsHTL7hYhQjJgd4AF49A6QovNuDiCahc4MMOuHNIbQEXP02gZCHgZfMajzsH1g37GlxNoKUanB0eZdV00b+phOxpNK9uToF2Ba6Yx4mXog47UdRxLcqYl02UhfPD+gA2c2+d96/PBQAAAABJRU5ErkJggg=="
                     />
@@ -179,7 +180,7 @@ export default {
       fullname: '',
       userId: 0,
       usernameFilter: null,
-      userIdFilter: '',
+      //userIdFilter: '',
       usersWithoutFilter: [],
       sortUsername: false,
       sortFullname: false,
@@ -187,6 +188,7 @@ export default {
     }
   },
   watch: {
+    //de acordo com o click o val vai ser true ou false
     sortUsername(val) {
       this.sortResult('username', val)
     },
@@ -194,7 +196,7 @@ export default {
       this.sortResult('fullname', val)
     },
     sortId(val) {
-      this.sortResultId('userId', val)
+      this.sortResult('id', val)
     },
   },
   computed: {
@@ -268,21 +270,10 @@ export default {
     sortResult(prop, asc) {
       this.users = this.usersWithoutFilter.sort(function(a, b) {
         if (asc) {
-          //true or false
+          //true
           return a[prop] > b[prop] ? 1 : a[prop] < b[prop] ? -1 : 0
         } else {
           return b[prop] > a[prop] ? 1 : b[prop] < a[prop] ? -1 : 0
-        }
-      })
-    },
-
-    sortResultId(prop, asc) {
-      this.users = this.usersWithoutFilter.sort(function(a, b) {
-        if (asc) {
-          //true or false
-          return a[prop] - b[prop]
-        } else {
-          return b[prop] - a[prop]
         }
       })
     },

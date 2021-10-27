@@ -7,3 +7,6 @@ data/portainer/bin
 data/portainer/compose
 data/portainer/tls
 data/portainer/config.json
+
+
+.prettierrc

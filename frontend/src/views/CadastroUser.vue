@@ -55,6 +55,7 @@ export default {
           password: this.form.password,
         })
         .then(resp => {
+          //limpar campos:
           this.form.username = ''
           this.form.full_name = ''
           this.form.password = ''
