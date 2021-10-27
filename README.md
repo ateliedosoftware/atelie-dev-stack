@@ -43,7 +43,7 @@ docker-compose up -d --build ambiente-vue
 
 ![image](https://user-images.githubusercontent.com/6537456/134259215-7b15b59b-1914-4bfb-a965-228d22fdd11f.png)
 
-## Iniciar json-server para tela de dashboard com docker-compose
+## Iniciar json-server com docker-compose
 
 Após construir o container do ambiente-vue é preciso iniciar o banco fictício que está sendo usado com json-server. Assim podemos utilizar seus dados para fazer testes.
 
