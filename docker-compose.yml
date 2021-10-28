@@ -12,64 +12,16 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./data/portainer:/data
-  # # # em construção
-  samba4:
-    container_name: dc
-    privileged: true
-    image: tiagojferreira/samba4:latest
-    command: /usr/local/bin/dcpromo.py
-    volumes:
-      - ./data/samba:/var/lib/samba
-      - ./data/samba/etc:/etc/samba
-    environment: 
-      - SAMBA_ADMINPASS=Abc123!
-      - SAMBA_KRBTGTPASS=Abc123!
-      - SAMBA_REALM=DEVDOM.COM
-      - SAMBA_HOST_NAME=dc
-      - SAMBA_DOMAIN=devdom
-    ports:
-      - 389:389
       
-    networks: 
-      - lab-net
-
-  # openldap:
-  #   container_name: openldap
-  #   image: docker.io/bitnami/openldap:2.5
-  #   ports:
-  #     - '1389:1389'
-  #     # - '1636:1636'  
-  #   volumes:
-  #     - './docker/data/openldap:/bitnami/openldap'
-  #   environment: 
-  #     - LDAP_ROOT=DC=example,DC=org
-  #     - LDAP_ADMIN_USERNAME=admin
-  #     - LDAP_ADMIN_PASSWORD=adminpassword
-  #     - LDAP_USERS=user01,user02
-  #     - LDAP_PASSWORDS=password1,password2
-  #   networks: 
-  #     - lab-net
-
-  ldap-backend:
-    # depends_on: 
-    #   - samba4
-    container_name: ldap-backend
-    build: backend
-    ports: 
-      - "1111:1111"
-    volumes:
-      - ./backend/:/usr/app/
-    networks: 
-      - lab-net
   ambiente-vue:
     container_name: ambiente-vue
     build: 
       context: ./frontend
       dockerfile: Dockerfile
     volumes:
-      frontend
+      # frontend
       - './frontend:/app'
-      # - '/app/node_modules'
+      - '/app/node_modules'
     ports: 
       - '8080:8080'  
     networks: 

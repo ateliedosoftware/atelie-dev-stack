@@ -23,6 +23,9 @@ Este é um diretório que merece atenção. A ideia é documentarmos todo o noss
     - Git - Sistema de Versionamento de Códigos
     - NPM ou YANR - Gestão de pacotes NodeJS
 
+## Para subir toda a stack ( inclui o portainer)
+Para executar toda a stack de desenvolvimento no futuro deve incluir container com a infraestrutura útil (LDAP, Samba) além do gerenciador de containers Portainer.
+
 ## Construir e rodar tela de login com docker-compose
 De acordo com docker-compose.yml defino na raíz do projeto:
 ```
