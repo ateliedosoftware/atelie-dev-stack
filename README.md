@@ -15,6 +15,8 @@ Num primeiro momento, o backend aproveita os códigos em NodeJS de interação c
 Este diretório deverá ser útil para centralizar os dados de banco de dados, se for o caso. Por hora não é prioritário.
 ### docs
 Este é um diretório que merece atenção. A ideia é documentarmos todo o nosso processo.
+### data
+Diretório menos relevante para o momento, servirá para armazenar configurações úteis da infraestrutura (Portainer, LDAP, Samba, etc)
 <hr>
 
 ## Requisitos para máquina de DEV:
@@ -30,14 +32,13 @@ Para executar toda a stack de desenvolvimento que no futuro deve incluir contain
 docker-compose up -d --build
 ```
 > --build vai garantir que os containers sejam construidos sempre que for o caso.
- 
+
 ## Construir e rodar tela de login com docker-compose
 De acordo com docker-compose.yml defino na raíz do projeto:
 ```
 docker-compose up -d --build ambiente-vue
 ```
 ![image](https://user-images.githubusercontent.com/6537456/134259215-7b15b59b-1914-4bfb-a965-228d22fdd11f.png)
-
 
 
 ## Para contribuir com códigos
@@ -125,4 +126,3 @@ Renomeie env-example para **.env**, e altere as variáveis  com valores do seu a
 ## License
 
 MIT
-set-inform 172.19.0.3:8080/inform
