@@ -50,30 +50,30 @@ services:
   #   networks: 
   #     - lab-net
 
-  ldap-backend:
-    # depends_on: 
-    #   - samba4
-    container_name: ldap-backend
-    build: backend
-    ports: 
-      - "1111:1111"
-    volumes:
-      - ./backend/:/usr/app/
-    networks: 
-      - lab-net
-  ambiente-vue:
-    container_name: ambiente-vue
-    build: 
-      context: ./frontend
-      dockerfile: Dockerfile
-    volumes:
-      frontend
-      - './frontend:/app'
-      # - '/app/node_modules'
-    ports: 
-      - '8080:8080'  
-    networks: 
-      - lab-net     
+  # ldap-backend:
+  #   # depends_on: 
+  #   #   - samba4
+  #   container_name: ldap-backend
+  #   build: backend
+  #   ports: 
+  #     - "1111:1111"
+  #   volumes:
+  #     - ./backend/:/usr/app/
+  #   networks: 
+  #     - lab-net
+  # ambiente-vue:
+  #   container_name: ambiente-vue
+  #   build: 
+  #     context: ./frontend
+  #     dockerfile: Dockerfile
+  #   volumes:
+  #     # frontend
+  #     - './frontend:/app'
+  #     - '/app/node_modules'
+  #   ports: 
+  #     - '8080:8080'  
+  #   networks: 
+  #     - lab-net     
 
 networks: 
   lab-net:
