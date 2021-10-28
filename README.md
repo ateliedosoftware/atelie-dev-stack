@@ -24,8 +24,13 @@ Este é um diretório que merece atenção. A ideia é documentarmos todo o noss
     - NPM ou YANR - Gestão de pacotes NodeJS
 
 ## Para subir toda a stack ( inclui o portainer)
-Para executar toda a stack de desenvolvimento no futuro deve incluir container com a infraestrutura útil (LDAP, Samba) além do gerenciador de containers Portainer.
+Para executar toda a stack de desenvolvimento que no futuro deve incluir container com a infraestrutura útil (LDAP, Samba) além do gerenciador de containers Portainer.
 
+```shell
+docker-compose up -d --build
+```
+> --build vai garantir que os containers sejam construidos sempre que for o caso.
+ 
 ## Construir e rodar tela de login com docker-compose
 De acordo com docker-compose.yml defino na raíz do projeto:
 ```
@@ -63,7 +68,27 @@ Com isso, o responsável pode conferir as mudanças e efetuar o merge.
 
 <hr>
 
-## Mais detalhes sobre a stack
+## Mais detalhes sobre a stackgit checkout -b feature/login-vue
+```
+Confere se tá na branch nova(olha o *):
+```shel
+git branch
+```
+Adiciona as tuas alterações:
+```shell
+git add .
+```
+Faz o commit explicando de forma objetiva e clara o que o código faz:
+```shell
+git commit -m "Inclui telas de boas vindas e login"
+```
+Por último faz o push:
+```shell
+git push origin feature/login-vue
+```
+Com isso, o responsável pode conferir as mudanças e efetuar o merge.
+
+<hr>
 Exemplo de aplicação para construção das imagens Docker e arquivos docker-compose.
 
 ### REST API microservice for Active Directory/LDAP implementations.
