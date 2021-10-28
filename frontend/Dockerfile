@@ -15,5 +15,6 @@ RUN npm install @vue/cli@3.7.0 -g
 #RUN vue add router
 RUN npm install vue-router
 
+
 # iniciar app
 CMD ["npm", "run", "serve"]
