@@ -17,5 +17,7 @@ RUN npm install vue-router
 # Install HTTP client
 RUN  npm install vuex axios
 
+RUN npm install bootstrap bootstrap-vue 
+
 # iniciar app
 CMD ["npm", "run", "serve"]

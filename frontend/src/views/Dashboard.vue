@@ -1,8 +1,8 @@
 <template>
   <main>
-    <div v-if="User">
+    <!--<div v-if="User">
       <p>{{ User }}</p>
-    </div>
+    </div>-->
     <NavBarDashboard />
     <div class="container">
       <div class="tableUsers ">

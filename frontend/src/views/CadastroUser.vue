@@ -48,22 +48,24 @@ export default {
   methods: {
     async addUser() {
       const axios = require('axios')
-      await axios
-        .post('http://localhost:3000/users', {
-          username: this.form.username,
-          fullname: this.form.full_name,
-          password: this.form.password,
-        })
-        .then(resp => {
-          //limpar campos:
-          this.form.username = ''
-          this.form.full_name = ''
-          this.form.password = ''
-          alert('Usuário ' + resp.data.username + ' cadastrado(a)!')
-        })
-        .catch(error => {
-          console.log(error)
-        })
+      if (this.form.username && this.form.full_name && this.form.password) {
+        await axios
+          .post('http://localhost:3000/users', {
+            username: this.form.username,
+            fullname: this.form.full_name,
+            password: this.form.password,
+          })
+          .then(resp => {
+            //limpar campos:
+            this.form.username = ''
+            this.form.full_name = ''
+            this.form.password = ''
+            alert('Usuário ' + resp.data.username + ' cadastrado(a)!')
+          })
+          .catch(error => {
+            console.log(error)
+          })
+      }
     },
 
     /*async submit() {

@@ -4,7 +4,7 @@
       <div class="navbar">
         <div class="navcontent">
           <div class="banner">
-            <router-link to="/" class="routerlink"
+            <router-link to="/dashboard" class="routerlink"
               ><img
                 src="https://ifrs.edu.br/wp-content/uploads/2017/08/logo_horizontal_simplificado-012.png"
                 style="width:15vh"

@@ -79,7 +79,7 @@ https://www.youtube.com/watch?v=Jg4GOPaE4do&ab_channel=ArtofEngineer
         </thead>
         <tbody>
           <tr v-for="user in resultQuery" :key="user.id">
-            <td style="text-align: center">{{ user.id }}</td>
+            <td class="pl-4">{{ user.id }}</td>
             <td>{{ user.username }}</td>
             <td>{{ user.fullname }}</td>
             <td style="vertical-align: middle">
@@ -108,7 +108,7 @@ https://www.youtube.com/watch?v=Jg4GOPaE4do&ab_channel=ArtofEngineer
                 </svg>
               </a>
 
-              <a @click="deleteClick(user.id)" class=" mr-1 mt-0" title="Excluir">
+              <a @click="showDeleteModal(user)" class=" mr-1 mt-0" title="Excluir">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -127,7 +127,32 @@ https://www.youtube.com/watch?v=Jg4GOPaE4do&ab_channel=ArtofEngineer
         </tbody>
       </table>
     </div>
-    <!-- modal editar ou criar usuario-->
+    <!-- modal editar ou excluir usuario
+
+     <b-modal
+      ref="edit-customer-modal"
+      size="xl"
+      hide-footer
+      title="Edit Customer"
+    >
+      <edit-customer-form
+        @closeEditModal="closeEditModal"
+        @reloadDataTable="getCustomerData"
+        @showSuccessAlert="showAlertUpdate"
+        :customerId="customerId"
+      ></edit-customer-form>
+    </b-modal>-->
+
+    <!-- Delete Customer Modal 
+    <b-modal ref="delete-customer-modal" size="md" hide-footer title="Confirm Deletion">
+      <delete-customer-modal
+        @closeDeleteModal="closeDeleteModal"
+        @reloadDataTable="getCustomerData"
+        @showDeleteAlert="showDeleteSuccessModal"
+        :customerId="customerId"
+      ></delete-customer-modal>
+    </b-modal>-->
+
     <!--<div
       class="modal fade"
       id="exampleModal"
@@ -162,7 +187,39 @@ https://www.youtube.com/watch?v=Jg4GOPaE4do&ab_channel=ArtofEngineer
           </div>
         </div>
       </div>
-    </div>-->
+    </div>
+
+    <b-modal size="sm" id="modalExcluir" title="Atenção!" :header-bg-warning="headerBgWarning">
+      <p>Deseja excluir o usuário?</p>
+      <button @click="deleteClick(user.id)">Excluir</button>
+    </b-modal>
+
+    <b-button v-b-modal.modalExcluir variant="primary">Show Modal</b-button>-->
+
+    <b-modal ref="modalExcluir" id="modalExcluir" size="sm">
+      <template v-slot:modal-header="{ close }">
+        <h5>Atenção!</h5>
+        <b-icon
+          icon="x-circle"
+          scale="1.5"
+          variant="danger"
+          @click="close()"
+          style="cursor:pointer"
+        >
+        </b-icon>
+      </template>
+
+      <p>Excluir o usuário {{ username }}?</p>
+
+      <template v-slot:modal-footer="{ hide, ok }">
+        <b-button class="mr-2" size="sm" variant="outline-secondary" @click="hide()">
+          Cancelar
+        </b-button>
+        <b-button size="sm" variant="danger" @click="deleteClick(userId), ok()">
+          Excluir
+        </b-button>
+      </template>
+    </b-modal>
   </div>
 </template>
 
@@ -180,7 +237,6 @@ export default {
       fullname: '',
       userId: 0,
       usernameFilter: null,
-      //userIdFilter: '',
       usersWithoutFilter: [],
       sortUsername: false,
       sortFullname: false,
@@ -208,11 +264,11 @@ export default {
             this.usernameFilter
               .toLowerCase()
               .split(' ')
-              .every(v => user.username.toLowerCase().includes(v)) ||
+              .every(v => user.username.toLowerCase().includes(v)) || //filtra por username
             this.usernameFilter
               .toLowerCase()
               .split(' ')
-              .every(v => user.fullname.toLowerCase().includes(v))
+              .every(v => user.fullname.toLowerCase().includes(v)) //filtra por fullname
           )
         })
       } else {
@@ -233,10 +289,15 @@ export default {
         this.usersWithoutFilter = response.data
       })
     },
+    showDeleteModal(user) {
+      this.$refs['modalExcluir'].show()
+      this.userId = user.id
+      this.username = user.username
+    },
     deleteClick(id) {
-      if (!confirm('Excluir o usuário ' + id + '?')) {
-        return
-      }
+      // if (!confirm('Excluir o usuário ' + id + '?')) {
+      //   return
+      // }
       axios.delete('http://localhost:3000/users/' + id).then(response => {
         this.refreshData()
         console.log(response.data)

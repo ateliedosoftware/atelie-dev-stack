@@ -18,7 +18,7 @@
               id="inputUser"
               name="username"
               type="text"
-              placeholder=""
+              placeholder="Matrícula"
               v-model="form.username"
             />
             <p id="mensagem" class="feedback">{{ tipo }}</p>
@@ -39,16 +39,6 @@
   </div>
 </template>
 <script>
-/*
-var i = 0
-var x = ['CPF', 'Matrícula', 'Email'] // ex: 123.123.123-12
-setInterval(() => {
-  console.log(i)
-  document.getElementById('inputUser').placeholder = x[i]
-  i++
-  if (i == 3) i = 0
-}, 4000)
-*/
 import { mapActions } from 'vuex'
 import Navbar from '../components/NavBar.vue'
 
@@ -81,6 +71,22 @@ export default {
       this.cssTipoUsuario(val)
     },
   },
+
+  /*mounted: function() {
+    //mudar placeholder usuário
+    var i = 0
+    var x = ['CPF', 'Email', 'Matrícula'] // ex: 123.123.123-12
+    setInterval(() => {
+      //console.log(i)
+      document.getElementById('inputUser').placeholder = x[i]
+      i++
+      if (i == 3) i = 0
+    }, 3000)
+  },
+
+  beforeDestroy: function() {
+    delete this.mounted
+  },*/
 
   methods: {
     ...mapActions(['LogIn']),
@@ -132,7 +138,7 @@ export default {
       }
 
       // ---- Mensagem CPF ----
-      else if (testaCPF(x)) {
+      else if (testaCPF(x) && x.length == 11) {
         return (this.tipo = 'Matrícula CPF') // sem pontuação
       } else if (x.split('.').length == 3) {
         if (
@@ -144,7 +150,7 @@ export default {
               .join(''),
           )
         ) {
-          return (this.tipo = 'Matrícula CPF') // com pontuação
+          return (this.tipo = 'Matrícula CPF com pontuação') // com pontuação
         }
       }
 
