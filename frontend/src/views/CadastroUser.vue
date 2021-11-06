@@ -20,7 +20,7 @@
             <input type="password" name="password" v-model="form.password" />
           </div>
           <div>
-            <button class="button-submit" type="submit">Submit</button>
+            <button class="button-submit mt-4" type="submit">Submit</button>
           </div>
         </form>
       </div>

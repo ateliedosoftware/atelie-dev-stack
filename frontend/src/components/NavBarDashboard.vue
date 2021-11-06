@@ -57,6 +57,11 @@ export default {
 a:hover {
   cursor: pointer;
 }
+
+a:link {
+  text-decoration: none;
+}
+
 #nav a.router-link-exact-active {
   color: #42b983;
 }
@@ -89,6 +94,11 @@ a:hover {
   margin: 0;
   padding: 0;
   display: block;
+  color: rgb(94, 94, 94);
+}
+
+.navbarlink:hover {
+  color: rgb(49, 49, 49);
 }
 
 .icon {
