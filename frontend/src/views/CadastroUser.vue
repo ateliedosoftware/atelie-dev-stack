@@ -108,6 +108,7 @@ label {
 
 .button-submit {
   width: 100%;
+  border-radius: 5px;
 }
 
 .title-form {
