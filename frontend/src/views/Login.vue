@@ -39,6 +39,15 @@
   </div>
 </template>
 <script>
+//mudar placeholder usuário
+var i = 0
+var x = ['CPF', 'Email', 'Matrícula'] // ex: 123.123.123-12
+setInterval(() => {
+  //console.log(i)
+  document.getElementById('inputUser').placeholder = x[i]
+  i++
+  if (i == 3) i = 0
+}, 3000)
 import { mapActions } from 'vuex'
 import Navbar from '../components/NavBar.vue'
 
@@ -230,8 +239,8 @@ main {
   justify-items: center;
   height: auto;
   width: 300px;
-  padding-bottom: 15px;
-  padding-top: 15px;
+  padding-bottom: 25px;
+  padding-top: 25px;
 }
 
 .title-login {
@@ -240,6 +249,7 @@ main {
 
 button {
   width: 70%;
+  border-radius: 5px;
 }
 
 input {
