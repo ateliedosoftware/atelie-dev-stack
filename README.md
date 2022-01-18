@@ -121,7 +121,7 @@ Renomeie env-example para **.env**, e altere as variáveis  com valores do seu a
 
 - [V SEMEPT IFRS - Resumo Pedro A. Machado](https://github.com/ateliedosoftware/atelie-dev-stack/blob/main/docs/publicacoes/resumo_semept2020.md) 
 - [V Sertão Aplicado - Resumo Fabricio Covalesci/2020](https://github.com/ateliedosoftware/atelie-dev-stack/blob/main/docs/publicacoes/sertaoaplicado2020.md)
-- [I - Mostra Integrada da Região NORTE – IFRS > VII - Sertão Aplicado e VII MOEPEX - Resumo](Júlia Hammes Pereira de Mello, Pedro Afonso Nunes Machado)
+- [I - Mostra Integrada da Região NORTE – IFRS > VII - Sertão Aplicado e VII MOEPEX - Resumo Júlia Hammes Pereira de Mello, Pedro Afonso Nunes Machado](https://eventos.ifrs.edu.br/index.php/mostraintegradaregiaonorte/SertaoAplicado/paper/view/11189)
 
 
 ## License
